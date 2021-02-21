@@ -8,8 +8,14 @@
 						<body>
 						<div style="height: 150px;width: 500px;background-color: red;" ontouchstart="touchStart(event)"
 						ontouchmove="touchMove(event)"
-						ontouchend="touchEnd()">...</div>
+						ontouchend="touchEnd()">Comecar</div>
 						<script>
+							function left(){
+								document.querySelector('div').innerHTML = 'left';
+							}
+							function right(){
+								document.querySelector('div').innerHTML = 'right';
+							}
 						var startingX , startingY , movingX , movingY ;
 						function touchStart(evt){
 						startingX = evt.touches[0].clientX ;
@@ -21,9 +27,9 @@
 						}
 						function touchEnd(){
 						if(startingX+100 < movingX){
-												console.log('right');
+												right();
 						} else if(startingX-100 > movingX){
-												console.log('left');
+												left();
 												}
 					 
 					 
